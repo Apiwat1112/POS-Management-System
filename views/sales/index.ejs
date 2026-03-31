@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="th" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Thai', 'Sarabun', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* ---- Header ---- */
+        .pos-header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .pos-header .logo {
+            width: 36px;
+            height: 36px;
+            background: #E0FFFF;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .pos-header h1 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.3px;
+        }
+
+        .pos-header .badge-live {
+            font-size: 0.65rem;
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--green);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        .pos-header .time-badge {
+            margin-left: auto;
+            font-size: 0.8rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        /* ---- Layout ---- */
+        .pos-layout {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 0;
+            height: calc(100vh - 65px);
+        }
+
+        /* ---- Product Panel ---- */
+        .product-panel {
+            overflow-y: auto;
+            padding: 24px;
+            background: var(--bg);
+        }
+
+        .product-panel::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .product-panel::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        .search-bar {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .search-bar i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .search-bar input {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 11px 16px 11px 40px;
+            color: var(--text);
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s;
+            font-family: inherit;
+        }
+
+        .search-bar input::placeholder {
+            color: var(--muted);
+        }
+
+        .search-bar input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+        }
+
+        /* ---- Product Grid ---- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 14px;
+        }
+
+        .product-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--card-radius);
+            padding: 16px;
+            cursor: pointer;
+            transition: all .2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--accent-glow), transparent);
+            opacity: 0;
+            transition: opacity .2s;
+        }
+
+        .product-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-card.has-qty {
+            border-color: var(--accent);
+            background: var(--surface2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .product-card .p-name {
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+            color: var(--text);
+        }
+
+        .product-card .p-price {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent2);
+        }
+
+        .product-card .p-price small {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--muted);
+            margin-left: 2px;
+        }
+
+        /* qty control inside card */
+        .qty-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .qty-control button {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all .15s;
+            flex-shrink: 0;
+        }
+
+        .qty-control button:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .qty-control input {
+            flex: 1;
+            text-align: center;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 4px 6px;
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 600;
+            width: 0;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .qty-control input:focus {
+            border-color: var(--accent);
+        }
+
+        /* qty badge */
+        .qty-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+            z-index: 2;
+        }
+
+        .product-card.has-qty .qty-badge {
+            display: flex;
+        }
+
+        /* ---- Cart Panel ---- */
+        .cart-panel {
+            background: var(--surface);
+            border-left: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .cart-header {
+            padding: 20px 22px 16px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .cart-header h5 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cart-count {
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px 0;
+        }
+
+        .cart-items::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .cart-items::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        /* empty state */
+        .cart-empty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--muted);
+            gap: 12px;
+            font-size: 0.85rem;
+        }
+
+        .cart-empty i {
+            font-size: 2.5rem;
+            opacity: 0.3;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 22px;
+            border-bottom: 1px solid rgba(42, 47, 69, 0.5);
+            animation: slideIn .2s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .cart-item img {
+            width: 42px;
+            height: 42px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .cart-item .ci-name {
+            font-size: 0.82rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 2px;
+        }
+
+        .cart-item .ci-price {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .cart-item .ci-subtotal {
+            margin-left: auto;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--accent2);
+            flex-shrink: 0;
+        }
+
+        .cart-item .ci-remove {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 6px;
+            transition: color .15s, background .15s;
+            flex-shrink: 0;
+        }
+
+        .cart-item .ci-remove:hover {
+            color: var(--red);
+            background: rgba(239, 68, 68, .1);
+        }
+
+        /* ---- Summary ---- */
+        .cart-summary {
+            flex-shrink: 0;
+            padding: 18px 22px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .form-group-dark {
+            margin-bottom: 14px;
+        }
+
+        .form-group-dark label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .form-group-dark select {
+            width: 100%;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 9px 12px;
+            color: var(--text);
+            font-size: 0.85rem;
+            font-family: inherit;
+            outline: none;
+            cursor: pointer;
+            transition: border-color .2s;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%2364748b' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+        }
+
+        .form-group-dark select:focus {
+            border-color: var(--accent);
+        }
+
+        .form-group-dark select option {
+            background: #1a1d27;
+        }
+
+        .summary-rows {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 14px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.83rem;
+            margin-bottom: 8px;
+        }
+
+        .summary-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .summary-row .label {
+            color: var(--muted);
+        }
+
+        .summary-row .value {
+            font-weight: 600;
+        }
+
+        .summary-row.discount .value {
+            color: var(--green);
+        }
+
+        .summary-row.total {
+            border-top: 1px solid var(--border);
+            margin-top: 10px;
+            padding-top: 10px;
+            font-size: 1rem;
+        }
+
+        .summary-row.total .label {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .summary-row.total .value {
+            color: var(--accent2);
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .btn-checkout {
+            width: 100%;
+            background: var(--accent);
+            border: none;
+            border-radius: 12px;
+            padding: 14px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-checkout::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+        }
+
+        .btn-checkout:hover {
+            background: #00cc29;
+            box-shadow: 0 4px 20px var(--accent-glow);
+            transform: translateY(-1px);
+        }
+
+        .btn-checkout:active {
+            transform: translateY(0);
+        }
+
+        .btn-checkout:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ---- Scrollbar ---- */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 5px;
+        }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 900px) {
+            .pos-layout {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .cart-panel {
+                border-left: none;
+                border-top: 1px solid var(--border);
+                height: auto;
+            }
+
+            .product-panel {
+                height: auto;
+                overflow: visible;
+            }
+        }
+
+        .border-dashed {
+            border-style: dashed !important;
+        }
+
+        .verify-zone {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .verify-zone:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent) !important;
+        }
+    </style>
+
+    <link rel="stylesheet" href="/css/theme.css">
+
+    <script src="/js/theme.js"></script>
+</head>
+
+<body>
+    <%- include('../navbar') %>
+
+    <div class="pos-header">
+        <div class="logo">🛒</div>
+        <h1>POS ระบบขายสินค้า</h1>
+        <span class="badge-live">● LIVE</span>
+        <span class="time-badge" id="clock"></span>
+    </div>
+
+    <div id="pos-form">
+
+        <div class="pos-layout">
+
+            <!-- ===== LEFT: สินค้า ===== -->
+            <div class="product-panel">
+                <div class="search-bar">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="search-input" placeholder="ค้นหาสินค้า...">
+                </div>
+
+                <div class="section-title">สินค้าทั้งหมด (<%= products.length %> รายการ)</div>
+
+                <div class="product-grid" id="product-grid">
+                    <% products.forEach((p, index)=> { %>
+                    <div class="product-card" data-index="<%= index %>" data-name="<%= p.name.toLowerCase() %>" onclick="addToCart(<%= index %>)">
+                        <div class="qty-badge" id="badge-<%= index %>">0</div>
+                        <img src="<%= p.image ? '/uploads/' + p.image : 'https://placehold.co/400x240?text=No+Image' %>" alt="<%= p.name %>">
+                        <div class="p-name">
+                            <%= p.name %>
+                        </div>
+                        <div class="p-price">฿<%= Number(p.price).toLocaleString() %> <small>บาท</small></div>
+                        <div class="qty-control" onclick="event.stopPropagation()">
+                            <button type="button" class="btn-minus" data-index="<%= index %>">−</button>
+                            <input type="number" class="qty" id="qty-<%= index %>" data-price="<%= p.price %>" data-name="<%= p.name %>" data-product="<%= p._id %>" data-image="<%= p.image || '' %>" data-stock="<%= p.stock %>" data-index="<%= index %>" value="0" min="0" max="<%= p.stock %>">
+                            <button type="button" class="btn-plus" data-index="<%= index %>">+</button>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+
+            <!-- ===== RIGHT: ตะกร้า + สรุป ===== -->
+            <div class="cart-panel">
+                <div class="cart-header">
+                    <h5><i class="bi bi-bag-check"></i> รายการสั่งซื้อ <span class="cart-count" id="cart-count">0</span></h5>
+                    <button type="button" id="clear-all" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:0.8rem;">
+                        <i class="bi bi-trash3"></i> ล้าง
+                    </button>
+                </div>
+
+                <div class="cart-items" id="cart-items">
+                    <div class="cart-empty">
+                        <i class="bi bi-bag"></i>
+                        <span>ยังไม่มีสินค้าในตะกร้า</span>
+                        <span style="font-size:0.75rem">เลือกสินค้าทางซ้ายมือ</span>
+                    </div>
+                </div>
+
+                <div class="cart-summary">
+                    <div class="form-group-dark">
+                        <label>👤 สมาชิกลูกค้า</label>
+                        <select id="member-select">
+                            <option value="" data-points="0" selected>-- ไม่ระบุสมาชิก --</option>
+                            <% members.forEach(m=> { %>
+                            <option value="<%= m._id %>" data-points="<%= m.point %>">
+                                <%= m.name %> (แต้ม: <%= m.point %>)
+                            </option>
+                            <% }) %>
+                        </select>
+                    </div>
+
+                    <div class="form-group-dark" id="redeem-group" style="display: none;">
+                        <label>🎁 แลกแต้มเป็นส่วนลด (1 แต้ม = 1 บาท)</label>
+                        <input type="number" id="redeem-points" class="form-control" style="background: var(--bg); border: 1px solid var(--border); border-radius: 10px; color: var(--text);" min="0" value="0">
+                        <small class="text-muted mt-1 d-block" id="max-points-text">แต้มสูงสุดที่ใช้ได้: 0</small>
+                    </div>
+
+                    <div class="form-group-dark">
+                        <label>💸 ส่วนลด</label>
+                        <select id="promo">
+                            <option value="0" data-type="none">ไม่ใช้ส่วนลด</option>
+                            <option value="10" data-type="percent">ลด 10%</option>
+                            <option value="20" data-type="percent">ลด 20%</option>
+                            <option value="50" data-type="amount">ลด 50 บาท</option>
+                        </select>
+                    </div>
+                    <div class="form-group-dark">
+                        <label>💳 ช่องทางชำระเงิน</label>
+                        <select id="payment-method">
+                            <option value="cash">💵 เงินสด</option>
+                            <option value="transfer">🏦 โอนผ่านธนาคาร</option>
+                            <option value="promptpay">📱 พร้อมเพย์</option>
+                        </select>
+                    </div>
+
+                    <div class="summary-rows">
+                        <div class="summary-row">
+                            <span class="label">ยอดรวม</span>
+                            <span class="value">฿<span id="total">0.00</span></span>
+                        </div>
+                        <div class="summary-row discount">
+                            <span class="label">ส่วนลด</span>
+                            <span class="value">− ฿<span id="discount-amount">0.00</span></span>
+                        </div>
+                        <div class="summary-row total">
+                            <span class="label">ยอดสุทธิ</span>
+                            <span class="value">฿<span id="net">0.00</span></span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-checkout" id="checkout-btn" disabled>
+                        <i class="bi bi-check-circle-fill"></i>
+                        บันทึกการขาย
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== PROMPTPAY QR MODAL ===== -->
+    <div class="modal fade" id="qrModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="glass-panel modal-content border-0 p-4 text-center">
+                <div class="modal-header border-0 pb-0 justify-content-center">
+                    <h4 class="fw-bold text-gradient mb-0">สแกนเพื่อชำระเงิน</h4>
+                </div>
+                <div class="modal-body py-4">
+                    <div id="qrContainer">
+                        <div class="mb-3">
+                            <img id="qrImage" src="" class="img-fluid rounded-4 shadow-sm border border-white border-opacity-10" style="max-width: 280px; background: white; padding: 10px;">
+                        </div>
+                        <div class="display-6 fw-bold mb-1">฿<span id="qrAmountText">0.00</span></div>
+                        <p class="text-muted small mb-3">PromptPay QR Code | ยอดเงินรวมส่วนลดแล้ว</p>
+                    </div>
+
+                    <!-- Success UI (Hidden by default) -->
+                    <div id="verifySuccessUI" style="display: none;" class="py-4">
+                        <div class="mb-3">
+                            <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+                        </div>
+                        <h3 class="fw-bold text-success">โอนเงินสำเร็จ!</h3>
+                        <p class="text-muted">กำลังตรวจสอบสลิปและบันทึกรายการ...</p>
+                    </div>
+
+                    <hr class="border-secondary opacity-25">
+
+                    <div class="verify-zone mt-3 p-3 rounded-4 border-2 border-dashed border-secondary border-opacity-25" id="dropZone">
+                        <div id="verifyStatus">
+                            <i class="bi bi-cloud-arrow-up display-6 text-muted mb-2 d-inline-block"></i>
+                            <p class="small text-muted mb-0">อัปโหลดสลิปเพื่อตรวจสอบอัตโนมัติ</p>
+                            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill mt-2" onclick="document.getElementById('slipInput').click()">เลือกไฟล์สลิป</button>
+                            <input type="file" id="slipInput" hidden accept="image/*" onchange="handleSlipUpload(this.files[0])">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0 d-grid gap-2">
+                    <button type="button" id="manualConfirmBtn" class="btn btn-primary rounded-pill py-2 fw-bold" onclick="simulatePaymentForCurrentOrder()">
+                        <i class="bi bi-check-circle-fill"></i> ยืนยันว่าชำระเงินแล้ว (กดเอง)
+                    </button>
+                    <button type="button" class="btn btn-link text-muted small text-decoration-none" data-bs-dismiss="modal">ยกเลิกและกลับไปแก้ไข</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== Clock =====
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').textContent =
+                now.toLocaleTimeString('th-TH', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // ===== State =====
+        const cart = {}; // index -> { name, price, image, qty, product }
+
+        // ===== Format =====
+        function fmt(n) {
+            return Number(n).toLocaleString('en-US', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+        }
+
+        // ===== Calc =====
+        function calcTotal() {
+            let total = 0;
+            Object.values(cart).forEach(item => {
+                total += item.price * item.qty;
+            });
+
+            const promo = document.getElementById('promo');
+            const discountVal = Number(promo.value);
+            const discountType = promo.options[promo.selectedIndex].dataset.type;
+            const memberSelect = document.getElementById('member-select');
+            const redeemInput = document.getElementById('redeem-points');
+
+            let maxPoints = 0;
+            if (memberSelect.selectedIndex > 0) {
+                maxPoints = Number(memberSelect.options[memberSelect.selectedIndex].dataset.points) || 0;
+            }
+
+            // Cap redeem points by total value and max points
+            let redeemPoints = Math.min(Number(redeemInput.value) || 0, maxPoints);
+            // Cap points so it doesn't exceed total (after other discounts if any, but simplified here)
+            redeemPoints = Math.min(redeemPoints, total);
+            // Update the input to reflect caps (except while typing, maybe annoying but safe. Better to just use the value for calc)
+            // let's just cap the effective discount instead of forcing the input right away.
+            const effectiveRedeem = Math.max(0, Math.min(Number(redeemInput.value) || 0, maxPoints, total));
+
+            let discountAmount = 0;
+
+            // Calculate base discount from promo dropdown
+            if (discountType === 'percent') discountAmount = (total * discountVal) / 100;
+            else if (discountType === 'amount') discountAmount = discountVal;
+
+            // Add points redemption value as cash discount
+            discountAmount += effectiveRedeem;
+
+            // Prevent overall discount from exceeding the total order value
+            discountAmount = Math.min(discountAmount, total);
+
+            let net = Math.max(0, total - discountAmount);
+
+            document.getElementById('total').textContent = fmt(total);
+            document.getElementById('discount-amount').textContent = fmt(discountAmount);
+            document.getElementById('net').textContent = fmt(net);
+
+            // Show points earned on checkout button
+            const earnedPoints = Math.floor(net / 100);
+            const btnText = memberSelect.value !== '' && total > 0 ?
+                `<i class="bi bi-check-circle-fill"></i> รับชำระ (ได้ ${earnedPoints} P)` :
+                `<i class="bi bi-check-circle-fill"></i> รับชำระเงิน`;
+
+            const btn = document.getElementById('checkout-btn');
+            btn.innerHTML = btnText;
+            btn.disabled = (total === 0);
+        }
+
+        // ===== Checkout logic with QR support =====
+        let currentCheckoutData = null;
+
+        function checkout() {
+            const items = Object.values(cart).filter(i => i.qty > 0).map(i => ({
+                product: i.product,
+                qty: i.qty
+            }));
+
+            if (items.length === 0) return;
+
+            const promo = document.getElementById('promo');
+            const memberSelect = document.getElementById('member-select');
+            const redeemInput = document.getElementById('redeem-points');
+            const paymentMethod = document.getElementById('payment-method').value;
+
+            let discountVal = Number(promo.value);
+            let discountType = promo.options[promo.selectedIndex].dataset.type;
+            const memberId = memberSelect.value || null;
+            let redeemPoints = 0;
+
+            if (memberId) {
+                const maxPoints = Number(memberSelect.options[memberSelect.selectedIndex].dataset.points) || 0;
+                redeemPoints = Math.max(0, Math.min(Number(redeemInput.value) || 0, maxPoints));
+            }
+
+            currentCheckoutData = {
+                items,
+                discount: discountVal,
+                discountType,
+                paymentMethod,
+                memberId,
+                redeemPoints
+            };
+
+            if (paymentMethod === 'promptpay') {
+                console.log('Starting PromptPay checkout flow...');
+                const netText = document.getElementById('net').textContent.replace(/,/g, '');
+                const net = parseFloat(netText);
+                console.log('Total amount:', net);
+
+                // Show loading gif
+                document.getElementById('qrImage').src = 'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueW92NjFvbmFodjEyaWlyZHJ4b3BhaHh5NmZ5eGt4ZzZ6ZzZ6ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7bu3XilJ5BOiSGic/giphy.gif';
+                document.getElementById('qrAmountText').textContent = fmt(net);
+
+                try {
+                    const qrModalElement = document.getElementById('qrModal');
+                    if (!qrModalElement) throw new Error('qrModal element not found');
+                    const myModal = new bootstrap.Modal(qrModalElement);
+                    myModal.show();
+                    console.log('Modal shown');
+                } catch (e) {
+                    console.error('Modal Error:', e);
+                    alert('เกิดข้อผิดพลาดในการเปิดหน้าต่างชำระเงิน: ' + e.message);
+                    return;
+                }
+
+                fetch(`/sales/generate-qr?amount=${net}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.qrImage) {
+                            document.getElementById('qrImage').src = data.qrImage;
+                        } else {
+                            alert('เกิดข้อผิดพลาดในการสร้าง QR');
+                            myModal.hide();
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        alert('ไม่สามารถสร้าง QR Code ได้');
+                        myModal.hide();
+                    });
+            } else {
+                finalizeCheckout();
+            }
+        }
+
+        function finalizeCheckout() {
+            if (!currentCheckoutData) return;
+
+            fetch('/sales/checkout', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(currentCheckoutData)
+                })
+                .then(async (res) => {
+                    const text = await res.text();
+
+                    if (!res.ok) {
+                        let message = text;
+
+                        try {
+                            const data = JSON.parse(text);
+                            message = data.error || message;
+                        } catch (err) {}
+
+                        throw new Error(message || 'Checkout failed');
+                    }
+
+                    return text;
+                })
+                .then(path => {
+                    window.location = path;
+                })
+                .catch(err => alert('เกิดข้อผิดพลาด: ' + err));
+        }
+
+        // ===== Slip Verification Logic =====
+        function handleSlipUpload(file) {
+            if (!file) return;
+
+            const zone = document.getElementById('dropZone');
+            const status = document.getElementById('verifyStatus');
+            const netText = document.getElementById('net').textContent.replace(/,/g, '');
+
+            status.innerHTML = `
+                    <div class="spinner-border text-primary spinner-border-sm mb-2" role="status"></div>
+                    <p class="small mb-0">กำลังตรวจสอบสลิป...</p>
+                `;
+            zone.classList.add('border-primary');
+
+            // Simulate API call to backend
+            fetch('/sales/verify-slip', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        amount: parseFloat(netText)
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        // Success flow
+                        document.getElementById('qrContainer').style.display = 'none';
+                        document.getElementById('verifySuccessUI').style.display = 'block';
+                        document.getElementById('manualConfirmBtn').style.display = 'none';
+                        zone.style.display = 'none';
+
+                        setTimeout(() => {
+                            finalizeCheckout();
+                        }, 1500);
+                    } else {
+                        alert('ตรวจสอบสลิปไม่สำเร็จ: ' + data.error);
+                        status.innerHTML = `
+                            <i class="bi bi-x-circle text-danger display-6 mb-2 d-inline-block"></i>
+                            <p class="small text-danger mb-0">ไม่พบยอดเงินที่ถูกต้อง</p>
+                            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill mt-2" onclick="document.getElementById('slipInput').click()">ลองใหม่อีกครั้ง</button>
+                        `;
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert('เกิดข้อผิดพลาดในการเชื่อมต่อระบบตรวจสอบ');
+                });
+        }
+
+        let currentOrder = null;
+        let paymentPollTimer = null;
+
+        function resetPaymentPolling() {
+            if (paymentPollTimer) {
+                clearInterval(paymentPollTimer);
+                paymentPollTimer = null;
+            }
+        }
+
+        function collectCheckoutPayload() {
+            const items = Object.values(cart).filter(i => i.qty > 0).map(i => ({
+                product: i.product,
+                qty: i.qty
+            }));
+
+            if (items.length === 0) {
+                throw new Error('Cart is empty');
+            }
+
+            const promo = document.getElementById('promo');
+            const memberSelect = document.getElementById('member-select');
+            const redeemInput = document.getElementById('redeem-points');
+            const paymentMethod = document.getElementById('payment-method').value;
+            const discount = Number(promo.value);
+            const discountType = promo.options[promo.selectedIndex].dataset.type;
+            const memberId = memberSelect.value || null;
+            let redeemPoints = 0;
+
+            if (memberId) {
+                const maxPoints = Number(memberSelect.options[memberSelect.selectedIndex].dataset.points) || 0;
+                redeemPoints = Math.max(0, Math.min(Number(redeemInput.value) || 0, maxPoints));
+            }
+
+            return {
+                items,
+                discount,
+                discountType,
+                paymentMethod,
+                memberId,
+                redeemPoints
+            };
+        }
+
+        async function createPendingOrder() {
+            const res = await fetch('/sales/create-order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(collectCheckoutPayload())
+            });
+            const data = await res.json();
+
+            if (!res.ok) {
+                throw new Error(data.error || 'Unable to create order');
+            }
+
+            currentOrder = data;
+            return data;
+        }
+
+        function showPaidState() {
+            document.getElementById('qrContainer').style.display = 'none';
+            document.getElementById('verifySuccessUI').style.display = 'block';
+            document.getElementById('manualConfirmBtn').style.display = 'none';
+            document.getElementById('dropZone').style.display = 'none';
+        }
+
+        async function pollPaymentStatus(orderId) {
+            const res = await fetch(`/sales/payment-status/${orderId}`);
+            const data = await res.json();
+
+            if (!res.ok) {
+                throw new Error(data.error || 'Unable to get payment status');
+            }
+
+            if (data.status === 'paid' && data.receiptPath) {
+                resetPaymentPolling();
+                showPaidState();
+                setTimeout(() => {
+                    window.location = data.receiptPath;
+                }, 1200);
+            }
+        }
+
+        function startPaymentPolling(orderId) {
+            resetPaymentPolling();
+            paymentPollTimer = setInterval(() => {
+                pollPaymentStatus(orderId).catch(err => console.error(err));
+            }, 3000);
+        }
+
+        async function openPromptPayModal(order) {
+            document.getElementById('qrImage').src = 'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueW92NjFvbmFodjEyaWlyZHJ4b3BhaHh5NmZ5eGt4ZzZ6ZzZ6ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7bu3XilJ5BOiSGic/giphy.gif';
+            document.getElementById('qrAmountText').textContent = fmt(order.total);
+            document.getElementById('verifySuccessUI').style.display = 'none';
+            document.getElementById('qrContainer').style.display = 'block';
+            document.getElementById('manualConfirmBtn').style.display = 'block';
+            document.getElementById('dropZone').style.display = 'block';
+
+            const qrModalElement = document.getElementById('qrModal');
+            const myModal = new bootstrap.Modal(qrModalElement);
+            myModal.show();
+
+            const res = await fetch(`/sales/generate-qr?orderId=${order.orderId}`);
+            const data = await res.json();
+
+            if (!res.ok) {
+                myModal.hide();
+                throw new Error(data.error || 'Unable to generate QR');
+            }
+
+            if (!data.qrImage) {
+                myModal.hide();
+                throw new Error('QR image was not returned by the server');
+            }
+
+            document.getElementById('qrImage').src = data.qrImage;
+            document.getElementById('qrAmountText').textContent = fmt(data.amount ?? order.total);
+            startPaymentPolling(order.orderId);
+        }
+
+        async function checkout() {
+            try {
+                const payload = collectCheckoutPayload();
+                const order = await createPendingOrder();
+
+                if (payload.paymentMethod === 'promptpay') {
+                    await openPromptPayModal(order);
+                } else {
+                    await finalizeCheckout('manual-direct');
+                }
+            } catch (err) {
+                alert(err.message);
+            }
+        }
+
+        async function finalizeCheckout(provider = 'manual-direct') {
+            if (!currentOrder?.orderId) {
+                throw new Error('Order not found');
+            }
+
+            const res = await fetch(`/sales/finalize-order/${currentOrder.orderId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    provider
+                })
+            });
+            const data = await res.json();
+
+            if (!res.ok) {
+                throw new Error(data.error || 'Unable to finalize order');
+            }
+
+            window.location = data.receiptPath;
+        }
+
+        async function simulatePaymentForCurrentOrder() {
+            if (!currentOrder?.paymentReference) {
+                alert('No pending order');
+                return;
+            }
+
+            try {
+                const res = await fetch('/sales/webhook/payment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        paymentReference: currentOrder.paymentReference,
+                        status: 'paid',
+                        provider: 'dev-simulated-webhook'
+                    })
+                });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    throw new Error(data.error || 'Unable to simulate payment');
+                }
+
+                await pollPaymentStatus(currentOrder.orderId);
+            } catch (err) {
+                alert(err.message);
+            }
+        }
+
+        function handleSlipUpload(file) {
+            if (!file || !currentOrder?.orderId) return;
+
+            const zone = document.getElementById('dropZone');
+            const status = document.getElementById('verifyStatus');
+
+            status.innerHTML = `
+                    <div class="spinner-border text-primary spinner-border-sm mb-2" role="status"></div>
+                    <p class="small mb-0">กำลังจำลอง provider callback...</p>
+                `;
+            zone.classList.add('border-primary');
+
+            fetch('/sales/verify-slip', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        orderId: currentOrder.orderId
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        resetPaymentPolling();
+                        showPaidState();
+                        setTimeout(() => {
+                            window.location = '/sales/receipt/' + currentOrder.orderId;
+                        }, 1200);
+                    } else {
+                        alert('ตรวจสอบสลิปไม่สำเร็จ: ' + data.error);
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert('เกิดข้อผิดพลาดในการจำลอง callback');
+                });
+        }
+
+        // Drag and Drop
+        const dropZone = document.getElementById('dropZone');
+        if (dropZone) {
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.classList.add('bg-primary', 'bg-opacity-10');
+            });
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.classList.remove('bg-primary', 'bg-opacity-10');
+            });
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('bg-primary', 'bg-opacity-10');
+                const file = e.dataTransfer.files[0];
+                if (file && file.type.startsWith('image/')) {
+                    handleSlipUpload(file);
+                }
+            });
+        }
+
+        document.getElementById('checkout-btn').addEventListener('click', checkout);
+
+        // ===== Update Cart UI =====
+        function renderCart() {
+            const container = document.getElementById('cart-items');
+            const items = Object.entries(cart).filter(([, v]) => v.qty > 0);
+
+            if (items.length === 0) {
+                container.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="bi bi-bag"></i>
+                        <span>ยังไม่มีสินค้าในตะกร้า</span>
+                        <span style="font-size:0.75rem">เลือกสินค้าทางซ้ายมือ</span>
+                    </div>`;
+                document.getElementById('cart-count').textContent = 0;
+                return;
+            }
+
+            let totalQty = 0;
+            container.innerHTML = items.map(([idx, item]) => {
+                totalQty += item.qty;
+                return `
+                <div class="cart-item" data-index="${idx}">
+                    <img src="/uploads/${item.image}" alt="${item.name}">
+                    <div style="flex:1;min-width:0">
+                        <div class="ci-name">${item.name}</div>
+                        <div class="ci-price">฿${Number(item.price).toLocaleString()} × ${item.qty}</div>
+                    </div>
+                    <span class="ci-subtotal">฿${fmt(item.price * item.qty)}</span>
+                    <button class="ci-remove" data-index="${idx}" type="button"><i class="bi bi-x-lg"></i></button>
+                </div>`;
+            }).join('');
+
+            document.getElementById('cart-count').textContent = totalQty;
+
+            // remove buttons
+            container.querySelectorAll('.ci-remove').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = btn.dataset.index;
+                    setQty(idx, 0);
+                });
+            });
+        }
+
+        // ===== Add to cart (คลิกการ์ด) =====
+        function addToCart(index) {
+            const input = document.querySelector(`.qty[data-index="${index}"]`);
+            if (!input) return;
+            setQty(index, Number(input.value) + 1);
+        }
+
+        // ===== Set Qty =====
+        function setQty(index, val) {
+            const input = document.querySelector(`.qty[data-index="${index}"]`);
+            if (!input) return;
+
+            const maxStock = Number(input.dataset.stock) || 0;
+            val = Math.max(0, Number(val));
+            val = Math.min(val, maxStock);
+
+            if (!Number.isFinite(val)) {
+                val = 0;
+            }
+
+            input.value = val;
+
+            if (val > 0) {
+                cart[index] = {
+                    name: input.dataset.name,
+                    price: Number(input.dataset.price),
+                    image: input.dataset.image,
+                    product: input.dataset.product,
+                    qty: val
+                };
+            } else {
+                delete cart[index];
+            }
+
+            // update card style
+            const card = document.querySelector(`.product-card[data-index="${index}"]`);
+            if (card) {
+                card.classList.toggle('has-qty', val > 0);
+                const badge = document.getElementById(`badge-${index}`);
+                if (badge) badge.textContent = val;
+            }
+
+            renderCart();
+            calcTotal();
+        }
+
+        // ===== Plus / Minus / Input — event delegation =====
+        document.getElementById('product-grid').addEventListener('click', function(e) {
+            const plusBtn = e.target.closest('.btn-plus');
+            const minusBtn = e.target.closest('.btn-minus');
+
+            if (plusBtn) {
+                const idx = plusBtn.dataset.index;
+                const input = document.querySelector(`.qty[data-index="${idx}"]`);
+                setQty(idx, Number(input.value) + 1);
+            }
+            if (minusBtn) {
+                const idx = minusBtn.dataset.index;
+                const input = document.querySelector(`.qty[data-index="${idx}"]`);
+                setQty(idx, Number(input.value) - 1);
+            }
+        });
+
+        // ===== Manual input =====
+        document.getElementById('product-grid').addEventListener('input', function(e) {
+            const input = e.target.closest('.qty');
+            if (input) setQty(input.dataset.index, input.value);
+        });
+
+        // ===== Promo / Payment / Member change =====
+        document.getElementById('promo').addEventListener('change', calcTotal);
+        document.getElementById('payment-method').addEventListener('change', calcTotal);
+
+        document.getElementById('member-select').addEventListener('change', function() {
+            const redeemGroup = document.getElementById('redeem-group');
+            const maxPointsText = document.getElementById('max-points-text');
+            const redeemInput = document.getElementById('redeem-points');
+
+            if (this.value !== '') {
+                const maxPoints = this.options[this.selectedIndex].dataset.points || 0;
+                redeemGroup.style.display = 'block';
+                maxPointsText.textContent = `แต้มสูงสุดที่ใช้ได้: ${maxPoints} (1 แต้ม = 1 บาท)`;
+                redeemInput.value = 0;
+                redeemInput.max = maxPoints;
+            } else {
+                redeemGroup.style.display = 'none';
+                redeemInput.value = 0;
+            }
+            calcTotal();
+        });
+
+        document.getElementById('redeem-points').addEventListener('input', calcTotal);
+
+        // ===== Clear All =====
+        document.getElementById('clear-all').addEventListener('click', () => {
+            Object.keys(cart).forEach(idx => setQty(idx, 0));
+        });
+
+        // ===== Search =====
+        document.getElementById('search-input').addEventListener('input', function() {
+            const q = this.value.toLowerCase().trim();
+            document.querySelectorAll('.product-card').forEach(card => {
+                const match = card.dataset.name.includes(q);
+                card.style.display = match ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>

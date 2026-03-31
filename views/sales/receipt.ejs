@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            width: 80mm;
+            font-family: monospace;
+        }
+
+        .line {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="/css/theme.css">
+
+    <script src="/js/theme.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h3>ใบเสร็จรับเงิน</h3>
+
+    <hr>
+
+    <% sale.items.forEach(item => { %>
+
+    <div class="line">
+        <span><%= item.name %> x<%= item.qty %></span>
+        <span><%= item.total %></span>
+    </div>
+
+    <% }) %>
+
+    <hr>
+
+    <div class="line">
+        <span>Subtotal</span>
+        <span><%= sale.subtotal %></span>
+    </div>
+
+    <div class="line">
+        <span>Discount</span>
+        <span>- <%= sale.discount %></span>
+    </div>
+
+    <div class="line">
+        <b>Total</b>
+        <b><%= sale.total %></b>
+    </div>
+
+    <br>
+
+    <div>
+        Payment: <%= sale.paymentMethod %>
+    </div>
+
+    <% if (sale.employee) { %>
+    <div>
+        Staff: <%= sale.employee.name %>
+    </div>
+    <% } %>
+
+    <% if (sale.member) { %>
+    <div>
+        Member: <%= sale.member.name %>
+    </div>
+    <% } %>
+
+    <div>
+        Date: <%= new Date(sale.createdAt).toLocaleString('th-TH') %>
+    </div>
+
+    <br><br>
+
+    <button onclick="window.print()">
+        พิมพ์ใบเสร็จ
+    </button>
+
+    <a href="/sales">
+        <button type="button">กลับหน้าขาย</button>
+    </a>
+
+</body>
+
+</html>

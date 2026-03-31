@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="th" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สินค้า - POS System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/theme.css">
+    <script src="/js/theme.js"></script>
+</head>
+
+<body>
+    <%- include('../navbar') %>
+
+    <div class="container mt-5">
+        <div class="glass-panel p-4 animate__animated animate__fadeIn">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h3 class="fw-bold mb-0 text-gradient">คลังสินค้า</h3>
+                    <p class="text-muted small mb-0">จัดการรายการสินค้าและจำนวนสต็อก</p>
+                </div>
+                <a href="/products/add" class="btn btn-primary d-flex align-items-center gap-2 rounded-pill px-4 shadow-sm">
+                    <i class="bi bi-box-seam-fill"></i> เพิ่มสินค้า
+                </a>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr class="text-uppercase small fw-bold text-muted border-bottom">
+                            <th class="ps-0 py-3" style="width: 80px;">รูปภาพ</th>
+                            <th class="py-3">รหัส / บาร์โค้ด</th>
+                            <th class="py-3">ชื่อสินค้า</th>
+                            <th class="py-3">ราคา</th>
+                            <th class="py-3">คงเหลือ</th>
+                            <th class="text-end pe-0 py-3">จัดการ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (products && products.length > 0) { %>
+                            <% products.forEach(p => { %>
+                            <tr>
+                                <td class="ps-0">
+                                    <% if (p.image) { %>
+                                    <img src="/uploads/<%= p.image %>" class="rounded-3 shadow-sm border" style="width: 50px; height: 50px; object-fit: cover;">
+                                    <% } else { %>
+                                    <div class="bg-secondary bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center border" style="width: 50px; height: 50px;">
+                                        <i class="bi bi-image text-muted"></i>
+                                    </div>
+                                    <% } %>
+                                </td>
+                                <td class="text-inherit">
+                                    <div class="fw-bold"><%= p.sku %></div>
+                                    <div class="small opacity-75"><%= p.barcode %></div>
+                                </td>
+                                <td class="fw-medium text-inherit"><%= p.name %></td>
+                                <td class="fw-bold text-primary">฿ <%= Number(p.price).toLocaleString() %></td>
+                                <td>
+                                    <span class="badge <%= p.stock <= 5 ? 'bg-danger' : 'bg-success' %> bg-opacity-10 <%= p.stock <= 5 ? 'text-danger' : 'text-success' %> border <%= p.stock <= 5 ? 'border-danger' : 'border-success' %> border-opacity-25 px-3 py-2 rounded-pill">
+                                        <%= p.stock %> ชิ้น
+                                    </span>
+                                </td>
+                                <td class="text-end pe-0">
+                                    <div class="btn-group">
+                                        <a href="/products/edit/<%= p._id %>" class="btn btn-outline-warning btn-sm px-3 rounded-pill me-2">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+                                        <form action="/products/delete/<%= p._id %>" method="POST" style="display:inline" onsubmit="return confirm('ยืนยันการลบสินค้านี้?')">
+                                            <button class="btn btn-outline-danger btn-sm px-3 rounded-pill">
+                                                <i class="bi bi-trash-fill"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% }) %>
+                        <% } else { %>
+                            <tr>
+                                <td colspan="6" class="text-center py-5 text-muted">
+                                    <i class="bi bi-box display-4 d-block mb-3 opacity-25"></i>
+                                    ยังไม่มีข้อมูลสินค้า
+                                </td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

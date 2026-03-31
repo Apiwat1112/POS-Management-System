@@ -1,0 +1,173 @@
+/* Global Theme Overrides for POS System */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap');
+
+:root,
+[data-bs-theme="light"] {
+    --bs-body-font-family: 'Noto Sans Thai', 'Sarabun', sans-serif;
+    --bs-body-bg: #f8fafc;
+    --bs-body-color: #334155;
+
+    --bs-primary: #6366f1;
+    --bs-primary-rgb: 99, 102, 241;
+    --bs-secondary: #e2e8f0;
+
+    --bs-link-color: #4f46e5;
+    --bs-link-hover-color: #6366f1;
+
+    --surface: rgba(255, 255, 255, 0.9);
+    --surface-border: rgba(226, 232, 240, 0.8);
+    --glass-blur: blur(12px);
+}
+
+[data-bs-theme="dark"] {
+    --bs-body-bg: #0f1117;
+    --bs-body-color: #f8fafc;
+
+    --bs-secondary: #2a2f45;
+
+    --bs-link-color: #818cf8;
+    --bs-link-hover-color: #a5b4fc;
+
+    --surface: rgba(26, 29, 39, 0.85);
+    --surface-border: rgba(42, 47, 69, 0.8);
+    --glass-blur: blur(12px);
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+div,
+span,
+button,
+input,
+select,
+textarea,
+table,
+th,
+td,
+.navbar-brand,
+.nav-link,
+.navbar-text {
+    font-family: 'Noto Sans Thai', 'Sarabun', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Base Card Overrides & Glassmorphism */
+.card,
+.glass-panel {
+    background-color: var(--surface) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--surface-border) !important;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease;
+}
+
+.text-inherit {
+    color: inherit !important;
+}
+
+.text-muted {
+    color: var(--bs-body-color) !important;
+    opacity: 0.6;
+}
+
+.card-header,
+.card-footer {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    border-color: var(--surface-border) !important;
+}
+
+/* Button Overrides */
+.btn-primary {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #4f46e5 !important;
+    border-color: #4f46e5 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--bs-primary) !important;
+    color: #1a1d27 !important;
+}
+
+/* Table Overrides */
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--bs-body-color);
+    --bs-table-border-color: var(--surface-border);
+    vertical-align: middle;
+}
+
+.table> :not(caption)>*>* {
+    background-color: transparent;
+    color: var(--bs-body-color);
+    border-bottom-color: var(--surface-border);
+}
+
+.table-hover>tbody>tr:hover>* {
+    background-color: var(--surface-border);
+}
+
+/* Form Controls */
+.form-control,
+.form-select {
+    background-color: var(--surface) !important;
+    border-color: var(--surface-border) !important;
+    color: var(--bs-body-color) !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--bs-primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25) !important;
+}
+
+/* Auth Pages Container (override generic containers) */
+.auth-container {
+    background: var(--surface);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--surface-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--bs-primary), var(--bs-link-hover-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.navbar-text {
+    color: var(--bs-body-color) !important;
+}

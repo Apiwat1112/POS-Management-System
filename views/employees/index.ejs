@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายชื่อพนักงาน - POS System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/theme.css">
+    <script src="/js/theme.js"></script>
+</head>
+
+<body>
+    <%- include('../navbar') %>
+
+    <div class="container mt-5">
+        <div class="glass-panel p-4 animate__animated animate__fadeIn">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h3 class="fw-bold mb-0 text-gradient">จัดการรายชื่อพนักงาน</h3>
+                    <p class="text-muted small mb-0">ตรวจสอบและตั้งค่าสิทธิ์การเข้าใช้งานของทีมงาน</p>
+                </div>
+                <a href="/employees/add" class="btn btn-primary d-flex align-items-center gap-2 rounded-pill px-4 shadow-sm">
+                    <i class="bi bi-person-badge-fill"></i> เพิ่มพนักงานใหม่
+                </a>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr class="text-uppercase small fw-bold text-muted border-bottom">
+                            <th class="ps-0 py-3">ชื่อพนักงาน</th>
+                            <th class="py-3">อีเมล</th>
+                            <th class="py-3">ตำแหน่ง</th>
+                            <th class="text-end pe-0 py-3">เครื่องมือ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (employees && employees.length > 0) { %>
+                            <% employees.forEach(e => { %>
+                            <tr class="border-bottom border-opacity-10">
+                                <td class="ps-0 py-3">
+                                    <div class="fw-bold text-inherit"><%= e.name %></div>
+                                    <div class="small opacity-50">@<%= e.username %></div>
+                                </td>
+                                <td class="text-inherit"><%= e.email %></td>
+                                <td>
+                                    <span class="badge <%= e.role === 'owner' ? 'bg-primary' : 'bg-secondary' %> bg-opacity-10 <%= e.role === 'owner' ? 'text-primary' : 'text-secondary' %> border <%= e.role === 'owner' ? 'border-primary' : 'border-secondary' %> border-opacity-25 px-3 py-2 rounded-pill">
+                                        <%= e.role === 'owner' ? 'เจ้าของร้าน (Owner)' : 'พนักงาน (Employee)' %>
+                                    </span>
+                                </td>
+                                <td class="text-end pe-0">
+                                    <div class="btn-group shadow-sm rounded-pill overflow-hidden">
+                                        <a href="/employees/edit/<%= e._id %>" class="btn btn-warning btn-sm px-3">
+                                            <i class="bi bi-pencil-square"></i> แก้ไข
+                                        </a>
+                                        <form action="/employees/delete/<%= e._id %>" method="POST" style="display:inline" onsubmit="return confirm('ยืนยันความต้องการที่จะลบพนักงานคนนี้?')">
+                                            <button class="btn btn-danger btn-sm px-3 border-start">
+                                                <i class="bi bi-trash-fill"></i> ลบ
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% }) %>
+                        <% } else { %>
+                            <tr>
+                                <td colspan="4" class="text-center py-5 text-muted">
+                                    <i class="bi bi-person-workspace display-4 d-block mb-3 opacity-25"></i>
+                                    ยังไม่มีข้อมูลพนักงานในระบบ
+                                </td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="th" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แก้ไขข้อมูลสินค้า - POS System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/theme.css">
+    <script src="/js/theme.js"></script>
+</head>
+
+<body>
+    <%- include('../navbar') %>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="glass-panel p-4 p-md-5 animate__animated animate__fadeIn">
+                    <div class="text-center mb-5">
+                        <div class="display-6 text-warning mb-2"><i class="bi bi-pencil-square"></i></div>
+                        <h3 class="fw-bold text-gradient">แก้ไขข้อมูลสินค้า</h3>
+                        <p class="text-muted small">ปรับปรุงข้อมูลสินค้า สต็อก หรือรูปภาพประกอบ</p>
+                    </div>
+
+                    <form action="/products/edit/<%= product._id %>" method="POST" enctype="multipart/form-data">
+                        <div class="row g-4">
+                            <div class="col-md-6 text-center border-end border-opacity-10 d-flex flex-column justify-content-between">
+                                <div class="mb-4">
+                                    <label class="form-label small fw-bold text-muted d-block mb-3">รูปภาพสินค้า</label>
+                                    <div id="imagePreview" class="bg-secondary bg-opacity-10 rounded-4 d-flex align-items-center justify-content-center border border-dashed mx-auto mb-3" style="width: 220px; height: 220px; cursor: pointer;" onclick="document.getElementById('imageInput').click()">
+                                        <% if(product.image){ %>
+                                            <img src="/uploads/<%= product.image %>" class="rounded-4 shadow-sm" style="width: 100%; height: 100%; object-fit: cover;">
+                                        <% } else { %>
+                                            <div class="text-center p-3">
+                                                <i class="bi bi-image display-5 text-muted mb-2"></i>
+                                                <div class="small text-muted">คลิกเพื่อเปลี่ยนรูปภาพ</div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                    <input type="file" name="image" id="imageInput" accept="image/*" class="d-none" onchange="previewImage(this)">
+                                </div>
+                                <div class="small text-muted mb-2">
+                                    <i class="bi bi-info-circle me-1"></i> คลิกที่รูปเพื่อเลือกไฟล์ใหม่
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold text-muted">ชื่อสินค้า</label>
+                                    <input class="form-control" name="name" value="<%= product.name %>" required>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">รหัสสินค้า (SKU)</label>
+                                        <input class="form-control" name="sku" value="<%= product.sku %>" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">ราคาขาย (บาท)</label>
+                                        <input class="form-control" name="price" type="number" value="<%= product.price %>" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">ทุนสินค้า (บาท)</label>
+                                        <input class="form-control" name="cost" type="number" value="<%= product.cost %>">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">จำนวนสต็อก</label>
+                                        <input class="form-control" name="stock" type="number" value="<%= product.stock %>">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold text-muted">หมวดหมู่</label>
+                                    <input class="form-control" name="category" value="<%= product.category %>">
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4 opacity-10">
+                        
+                        <div class="d-flex gap-3 justify-content-center">
+                            <a href="/products" class="btn btn-outline-secondary rounded-pill px-4 py-2 fw-bold">
+                                ยกเลิก
+                            </a>
+                            <button class="btn btn-warning rounded-pill px-5 py-2 fw-bold shadow-sm">
+                                <i class="bi bi-save-fill me-2"></i> บันทึกรายการแก้ไข
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var preview = document.getElementById('imagePreview');
+                    preview.innerHTML = '<img src="' + e.target.result + '" class="rounded-4 shadow-sm" style="width: 100%; height: 100%; object-fit: cover;">';
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
