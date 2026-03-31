@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "699f05811962cbe538622e8c"
+  },
+  "name": "admin",
+  "email": "admin@admin.com",
+  "username": "admin1",
+  "password": "$2b$10$ozRBaJkcmqMnTY.JsFcAj.5Inndyz0lpGgOi.ccVSztFfG.0nYceG",
+  "role": "owner",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "name": "Apiwat",
+  "email": "admin@pos.com",
+  "username": "Admin2",
+  "password": "$2b$10$409diu8YjldDyXCr4hKfTO3VNaU31ZHOoxmWGRpsrnZje.KAIqHzq",
+  "role": "owner",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2d49036819004fb43b543"
+  },
+  "name": "Gundam",
+  "email": "Gundam@gmail.com",
+  "username": "Gundam12",
+  "password": "$2b$10$YIIMt1Yi90Cb6AY3SuUVZeLghsBjCzK3gm1mn0DPhVrtMJGS6gWM2",
+  "role": "employee",
+  "__v": 0
+}]

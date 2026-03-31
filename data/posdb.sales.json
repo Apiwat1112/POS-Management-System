@@ -1,0 +1,1932 @@
+[{
+  "_id": {
+    "$oid": "69a2bfb85ffb0e8f08cdd1de"
+  },
+  "items": [],
+  "subtotal": 0,
+  "discount": 0,
+  "total": 0,
+  "paymentMethod": "cash",
+  "employee": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "createdAt": {
+    "$date": "2026-02-28T10:13:12.995Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-28T10:13:12.995Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2bfcc5ffb0e8f08cdd1e3"
+  },
+  "items": [],
+  "subtotal": 0,
+  "discount": 0,
+  "total": 0,
+  "paymentMethod": "cash",
+  "employee": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "createdAt": {
+    "$date": "2026-02-28T10:13:32.910Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-28T10:13:32.910Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2c1705ffb0e8f08cdd1f0"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f10d9379a85c230531983"
+      },
+      "name": "Stock Keeping Unit",
+      "price": 35,
+      "qty": 1,
+      "total": 35,
+      "_id": {
+        "$oid": "69a2c1705ffb0e8f08cdd1f1"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f11d2379a85c23053198b"
+      },
+      "name": "Lay’s BBQ 50g",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69a2c1705ffb0e8f08cdd1f2"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f121b379a85c23053198e"
+      },
+      "name": "Pringles Original",
+      "price": 59,
+      "qty": 1,
+      "total": 59,
+      "_id": {
+        "$oid": "69a2c1705ffb0e8f08cdd1f3"
+      }
+    }
+  ],
+  "subtotal": 119,
+  "discount": 10,
+  "total": 107.1,
+  "paymentMethod": "cash",
+  "employee": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "createdAt": {
+    "$date": "2026-02-28T10:20:32.422Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-28T10:20:32.422Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2cc177311cb8f5c183b1a"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f121b379a85c23053198e"
+      },
+      "name": "Pringles Original",
+      "price": 59,
+      "qty": 1,
+      "total": 59,
+      "_id": {
+        "$oid": "69b2cc177311cb8f5c183b1b"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1340379a85c230531991"
+      },
+      "name": "Koala’s March Chocolate",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2cc177311cb8f5c183b1c"
+      }
+    }
+  ],
+  "subtotal": 84,
+  "discount": 0,
+  "total": 84,
+  "paymentMethod": "cash",
+  "createdAt": {
+    "$date": "2026-03-12T14:22:15.331Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T14:22:15.331Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2d1d0d5d8f53a97ef34be"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f1381379a85c230531994"
+      },
+      "name": "Pocky Chocolate",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2d1d0d5d8f53a97ef34bf"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f13d2379a85c230531997"
+      },
+      "name": "Coca-Cola 325ml",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2d1d0d5d8f53a97ef34c0"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1505379a85c2305319a6"
+      },
+      "name": "มาม่า ต้มยำกุ้ง",
+      "price": 7,
+      "qty": 1,
+      "total": 7,
+      "_id": {
+        "$oid": "69b2d1d0d5d8f53a97ef34c1"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1534379a85c2305319a9"
+      },
+      "name": "มาม่า หมูสับ",
+      "price": 7,
+      "qty": 1,
+      "total": 7,
+      "_id": {
+        "$oid": "69b2d1d0d5d8f53a97ef34c2"
+      }
+    }
+  ],
+  "subtotal": 54,
+  "discount": 2.7,
+  "total": 51.3,
+  "paymentMethod": "cash",
+  "member": {
+    "$oid": "699f090464a133b681760939"
+  },
+  "createdAt": {
+    "$date": "2026-03-12T14:46:40.652Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T14:46:40.652Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2d1fdd5d8f53a97ef34e5"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f1381379a85c230531994"
+      },
+      "name": "Pocky Chocolate",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2d1fdd5d8f53a97ef34e6"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f13d2379a85c230531997"
+      },
+      "name": "Coca-Cola 325ml",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2d1fdd5d8f53a97ef34e7"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1534379a85c2305319a9"
+      },
+      "name": "มาม่า หมูสับ",
+      "price": 7,
+      "qty": 1,
+      "total": 7,
+      "_id": {
+        "$oid": "69b2d1fdd5d8f53a97ef34e8"
+      }
+    }
+  ],
+  "subtotal": 47,
+  "discount": 2.35,
+  "total": 44.65,
+  "paymentMethod": "cash",
+  "member": {
+    "$oid": "699f090464a133b681760939"
+  },
+  "createdAt": {
+    "$date": "2026-03-12T14:47:25.087Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T14:47:25.087Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2d2d780a964be5cb62a49"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f121b379a85c23053198e"
+      },
+      "name": "Pringles Original",
+      "price": 59,
+      "qty": 1,
+      "total": 59,
+      "_id": {
+        "$oid": "69b2d2d780a964be5cb62a4a"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1340379a85c230531991"
+      },
+      "name": "Koala’s March Chocolate",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2d2d780a964be5cb62a4b"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1381379a85c230531994"
+      },
+      "name": "Pocky Chocolate",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2d2d780a964be5cb62a4c"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f13d2379a85c230531997"
+      },
+      "name": "Coca-Cola 325ml",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2d2d780a964be5cb62a4d"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f149a379a85c2305319a0"
+      },
+      "name": "Oishi Green Tea",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2d2d780a964be5cb62a4e"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f14ce379a85c2305319a3"
+      },
+      "name": "Red Bull",
+      "price": 10,
+      "qty": 1,
+      "total": 10,
+      "_id": {
+        "$oid": "69b2d2d780a964be5cb62a4f"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1505379a85c2305319a6"
+      },
+      "name": "มาม่า ต้มยำกุ้ง",
+      "price": 7,
+      "qty": 1,
+      "total": 7,
+      "_id": {
+        "$oid": "69b2d2d780a964be5cb62a50"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1534379a85c2305319a9"
+      },
+      "name": "มาม่า หมูสับ",
+      "price": 7,
+      "qty": 1,
+      "total": 7,
+      "_id": {
+        "$oid": "69b2d2d780a964be5cb62a51"
+      }
+    }
+  ],
+  "subtotal": 163,
+  "discount": 0,
+  "total": 163,
+  "paymentMethod": "cash",
+  "member": {
+    "$oid": "699f090464a133b681760939"
+  },
+  "createdAt": {
+    "$date": "2026-03-12T14:51:03.366Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T14:51:03.366Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2d4c336819004fb43b5b4"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f10d9379a85c230531983"
+      },
+      "name": "Stock Keeping Unit",
+      "price": 35,
+      "qty": 1,
+      "total": 35,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5b5"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f11d2379a85c23053198b"
+      },
+      "name": "Lay’s BBQ 50g",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5b6"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f121b379a85c23053198e"
+      },
+      "name": "Pringles Original",
+      "price": 59,
+      "qty": 1,
+      "total": 59,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5b7"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1340379a85c230531991"
+      },
+      "name": "Koala’s March Chocolate",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5b8"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1381379a85c230531994"
+      },
+      "name": "Pocky Chocolate",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5b9"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f13d2379a85c230531997"
+      },
+      "name": "Coca-Cola 325ml",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5ba"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f142e379a85c23053199a"
+      },
+      "name": "Pepsi 325ml",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5bb"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1468379a85c23053199d"
+      },
+      "name": "น้ำดื่ม Singha 600ml",
+      "price": 10,
+      "qty": 1,
+      "total": 10,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5bc"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f149a379a85c2305319a0"
+      },
+      "name": "Oishi Green Tea",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5bd"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f14ce379a85c2305319a3"
+      },
+      "name": "Red Bull",
+      "price": 10,
+      "qty": 1,
+      "total": 10,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5be"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1505379a85c2305319a6"
+      },
+      "name": "มาม่า ต้มยำกุ้ง",
+      "price": 7,
+      "qty": 2,
+      "total": 14,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5bf"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1534379a85c2305319a9"
+      },
+      "name": "มาม่า หมูสับ",
+      "price": 7,
+      "qty": 3,
+      "total": 21,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5c0"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f156a379a85c2305319ac"
+      },
+      "name": "ไวไว บะหมี่",
+      "price": 20,
+      "qty": 1,
+      "total": 20,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5c1"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f15ae379a85c2305319b2"
+      },
+      "name": "ปลากระป๋อง Three Lady Cooks",
+      "price": 20,
+      "qty": 1,
+      "total": 20,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5c2"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1623379a85c2305319b5"
+      },
+      "name": "ทิชชู่ Scott",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5c3"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f167b379a85c2305319b8"
+      },
+      "name": "แชมพู Clear 170ml",
+      "price": 89,
+      "qty": 1,
+      "total": 89,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5c4"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f16cd379a85c2305319bb"
+      },
+      "name": "สบู่ Lux",
+      "price": 29,
+      "qty": 1,
+      "total": 29,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5c5"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1706379a85c2305319be"
+      },
+      "name": "แปรงสีฟัน Colgate",
+      "price": 35,
+      "qty": 1,
+      "total": 35,
+      "_id": {
+        "$oid": "69b2d4c336819004fb43b5c6"
+      }
+    }
+  ],
+  "subtotal": 487,
+  "discount": 0,
+  "total": 487,
+  "paymentMethod": "cash",
+  "member": {
+    "$oid": "699f090464a133b681760939"
+  },
+  "createdAt": {
+    "$date": "2026-03-12T14:59:15.154Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T14:59:15.154Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2dc4b36819004fb43ba65"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f10d9379a85c230531983"
+      },
+      "name": "Stock Keeping Unit",
+      "price": 35,
+      "qty": 1,
+      "total": 35,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba66"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f11d2379a85c23053198b"
+      },
+      "name": "Lay’s BBQ 50g",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba67"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f121b379a85c23053198e"
+      },
+      "name": "Pringles Original",
+      "price": 59,
+      "qty": 1,
+      "total": 59,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba68"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1340379a85c230531991"
+      },
+      "name": "Koala’s March Chocolate",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba69"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1381379a85c230531994"
+      },
+      "name": "Pocky Chocolate",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba6a"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f13d2379a85c230531997"
+      },
+      "name": "Coca-Cola 325ml",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba6b"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f142e379a85c23053199a"
+      },
+      "name": "Pepsi 325ml",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba6c"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1468379a85c23053199d"
+      },
+      "name": "น้ำดื่ม Singha 600ml",
+      "price": 10,
+      "qty": 1,
+      "total": 10,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba6d"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f149a379a85c2305319a0"
+      },
+      "name": "Oishi Green Tea",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba6e"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f14ce379a85c2305319a3"
+      },
+      "name": "Red Bull",
+      "price": 10,
+      "qty": 1,
+      "total": 10,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba6f"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1505379a85c2305319a6"
+      },
+      "name": "มาม่า ต้มยำกุ้ง",
+      "price": 7,
+      "qty": 1,
+      "total": 7,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba70"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1534379a85c2305319a9"
+      },
+      "name": "มาม่า หมูสับ",
+      "price": 7,
+      "qty": 1,
+      "total": 7,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba71"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f156a379a85c2305319ac"
+      },
+      "name": "ไวไว บะหมี่",
+      "price": 20,
+      "qty": 1,
+      "total": 20,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba72"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f15ae379a85c2305319b2"
+      },
+      "name": "ปลากระป๋อง Three Lady Cooks",
+      "price": 20,
+      "qty": 1,
+      "total": 20,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba73"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1623379a85c2305319b5"
+      },
+      "name": "ทิชชู่ Scott",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba74"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f167b379a85c2305319b8"
+      },
+      "name": "แชมพู Clear 170ml",
+      "price": 89,
+      "qty": 1,
+      "total": 89,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba75"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f16cd379a85c2305319bb"
+      },
+      "name": "สบู่ Lux",
+      "price": 29,
+      "qty": 3,
+      "total": 87,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba76"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1706379a85c2305319be"
+      },
+      "name": "แปรงสีฟัน Colgate",
+      "price": 35,
+      "qty": 1,
+      "total": 35,
+      "_id": {
+        "$oid": "69b2dc4b36819004fb43ba77"
+      }
+    }
+  ],
+  "subtotal": 524,
+  "discount": 0,
+  "total": 524,
+  "paymentMethod": "cash",
+  "member": {
+    "$oid": "69b2dc1336819004fb43ba48"
+  },
+  "createdAt": {
+    "$date": "2026-03-12T15:31:23.261Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T15:31:23.261Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2ed98e351d343d691fa96"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f10d9379a85c230531983"
+      },
+      "name": "Stock Keeping Unit",
+      "price": 35,
+      "qty": 2,
+      "total": 70,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691fa97"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f11d2379a85c23053198b"
+      },
+      "name": "Lay’s BBQ 50g",
+      "price": 25,
+      "qty": 2,
+      "total": 50,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691fa98"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f121b379a85c23053198e"
+      },
+      "name": "Pringles Original",
+      "price": 59,
+      "qty": 2,
+      "total": 118,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691fa99"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1340379a85c230531991"
+      },
+      "name": "Koala’s March Chocolate",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691fa9a"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1381379a85c230531994"
+      },
+      "name": "Pocky Chocolate",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691fa9b"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f13d2379a85c230531997"
+      },
+      "name": "Coca-Cola 325ml",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691fa9c"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f142e379a85c23053199a"
+      },
+      "name": "Pepsi 325ml",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691fa9d"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1468379a85c23053199d"
+      },
+      "name": "น้ำดื่ม Singha 600ml",
+      "price": 10,
+      "qty": 1,
+      "total": 10,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691fa9e"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f149a379a85c2305319a0"
+      },
+      "name": "Oishi Green Tea",
+      "price": 15,
+      "qty": 3,
+      "total": 45,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691fa9f"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f14ce379a85c2305319a3"
+      },
+      "name": "Red Bull",
+      "price": 10,
+      "qty": 6,
+      "total": 60,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691faa0"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1505379a85c2305319a6"
+      },
+      "name": "มาม่า ต้มยำกุ้ง",
+      "price": 7,
+      "qty": 4,
+      "total": 28,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691faa1"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1534379a85c2305319a9"
+      },
+      "name": "มาม่า หมูสับ",
+      "price": 7,
+      "qty": 2,
+      "total": 14,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691faa2"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f15ae379a85c2305319b2"
+      },
+      "name": "ปลากระป๋อง Three Lady Cooks",
+      "price": 20,
+      "qty": 2,
+      "total": 40,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691faa3"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1623379a85c2305319b5"
+      },
+      "name": "ทิชชู่ Scott",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691faa4"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f167b379a85c2305319b8"
+      },
+      "name": "แชมพู Clear 170ml",
+      "price": 89,
+      "qty": 1,
+      "total": 89,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691faa5"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f16cd379a85c2305319bb"
+      },
+      "name": "สบู่ Lux",
+      "price": 29,
+      "qty": 1,
+      "total": 29,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691faa6"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1706379a85c2305319be"
+      },
+      "name": "แปรงสีฟัน Colgate",
+      "price": 35,
+      "qty": 1,
+      "total": 35,
+      "_id": {
+        "$oid": "69b2ed98e351d343d691faa7"
+      }
+    }
+  ],
+  "subtotal": 693,
+  "discount": 138.6,
+  "total": 554.4,
+  "paymentMethod": "cash",
+  "member": {
+    "$oid": "69b2dc1336819004fb43ba48"
+  },
+  "createdAt": {
+    "$date": "2026-03-12T16:45:12.473Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T16:45:12.473Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2ee0ae351d343d691fcc6"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f10d9379a85c230531983"
+      },
+      "name": "Stock Keeping Unit",
+      "price": 35,
+      "qty": 1,
+      "total": 35,
+      "_id": {
+        "$oid": "69b2ee0ae351d343d691fcc7"
+      }
+    }
+  ],
+  "subtotal": 35,
+  "discount": 0,
+  "total": 35,
+  "paymentMethod": "cash",
+  "createdAt": {
+    "$date": "2026-03-12T16:47:06.299Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T16:47:06.299Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2f05b1c92f1d03f784a63"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f1381379a85c230531994"
+      },
+      "name": "Pocky Chocolate",
+      "price": 25,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b2f05b1c92f1d03f784a64"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f13d2379a85c230531997"
+      },
+      "name": "Coca-Cola 325ml",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2f05b1c92f1d03f784a65"
+      }
+    }
+  ],
+  "subtotal": 40,
+  "discount": 0,
+  "total": 40,
+  "paymentMethod": "promptpay",
+  "createdAt": {
+    "$date": "2026-03-12T16:56:59.547Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T16:56:59.547Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2f19a16acb9b11e316412"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f1534379a85c2305319a9"
+      },
+      "name": "มาม่า หมูสับ",
+      "price": 7,
+      "qty": 1,
+      "total": 7,
+      "_id": {
+        "$oid": "69b2f19a16acb9b11e316413"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1706379a85c2305319be"
+      },
+      "name": "แปรงสีฟัน Colgate",
+      "price": 35,
+      "qty": 1,
+      "total": 35,
+      "_id": {
+        "$oid": "69b2f19a16acb9b11e316414"
+      }
+    }
+  ],
+  "subtotal": 42,
+  "discount": 0,
+  "total": 42,
+  "paymentMethod": "transfer",
+  "createdAt": {
+    "$date": "2026-03-12T17:02:18.527Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T17:02:18.527Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2f3fc5c5c4433f2e62125"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f142e379a85c23053199a"
+      },
+      "name": "Pepsi 325ml",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2f3fc5c5c4433f2e62126"
+      }
+    }
+  ],
+  "subtotal": 15,
+  "discount": 0,
+  "total": 15,
+  "paymentMethod": "promptpay",
+  "createdAt": {
+    "$date": "2026-03-12T17:12:28.301Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T17:12:28.301Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2f5e4fc54dc01351f5072"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f142e379a85c23053199a"
+      },
+      "name": "Pepsi 325ml",
+      "price": 15,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b2f5e4fc54dc01351f5073"
+      }
+    }
+  ],
+  "subtotal": 15,
+  "discount": 0,
+  "total": 15,
+  "paymentMethod": "promptpay",
+  "createdAt": {
+    "$date": "2026-03-12T17:20:36.701Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T17:20:36.701Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2f63bfc54dc01351f5106"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f10d9379a85c230531983"
+      },
+      "name": "Stock Keeping Unit",
+      "price": 35,
+      "qty": 1,
+      "total": 35,
+      "_id": {
+        "$oid": "69b2f63bfc54dc01351f5107"
+      }
+    }
+  ],
+  "subtotal": 35,
+  "discount": 0,
+  "total": 35,
+  "paymentMethod": "cash",
+  "createdAt": {
+    "$date": "2026-03-12T17:22:03.328Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T17:22:03.328Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b96c6697ff69a667e38ad9"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f1381379a85c230531994"
+      },
+      "name": "Pocky Chocolate",
+      "price": 25,
+      "cost": 18,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69b96c6697ff69a667e38ada"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f13d2379a85c230531997"
+      },
+      "name": "Coca-Cola 325ml",
+      "price": 15,
+      "cost": 11,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b96c6697ff69a667e38adb"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1534379a85c2305319a9"
+      },
+      "name": "มาม่า หมูสับ",
+      "price": 7,
+      "cost": 5,
+      "qty": 1,
+      "total": 7,
+      "_id": {
+        "$oid": "69b96c6697ff69a667e38adc"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1706379a85c2305319be"
+      },
+      "name": "แปรงสีฟัน Colgate",
+      "price": 35,
+      "cost": 25,
+      "qty": 1,
+      "total": 35,
+      "_id": {
+        "$oid": "69b96c6697ff69a667e38add"
+      }
+    }
+  ],
+  "subtotal": 82,
+  "discount": 0,
+  "total": 82,
+  "paymentMethod": "cash",
+  "employee": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "createdAt": {
+    "$date": "2026-03-17T14:59:50.303Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-17T14:59:50.303Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b98d4ea8792e3043ef4e81"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f13d2379a85c230531997"
+      },
+      "name": "Coca-Cola 325ml",
+      "price": 15,
+      "cost": 11,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b98d4ea8792e3043ef4e82"
+      }
+    }
+  ],
+  "subtotal": 15,
+  "discount": 0,
+  "promoDiscount": 0,
+  "redeemedPoints": 0,
+  "total": 15,
+  "paymentMethod": "promptpay",
+  "status": "pending",
+  "paymentReference": "PAY-1773768014238-0552B55C",
+  "provider": null,
+  "providerPayload": null,
+  "paymentConfirmedAt": null,
+  "finalizedAt": null,
+  "qrExpiresAt": {
+    "$date": "2026-03-17T17:35:14.239Z"
+  },
+  "employee": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "member": null,
+  "createdAt": {
+    "$date": "2026-03-17T17:20:14.252Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-17T17:20:14.252Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b98d70a8792e3043ef4e9d"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f13d2379a85c230531997"
+      },
+      "name": "Coca-Cola 325ml",
+      "price": 15,
+      "cost": 11,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69b98d70a8792e3043ef4e9e"
+      }
+    }
+  ],
+  "subtotal": 15,
+  "discount": 0,
+  "promoDiscount": 0,
+  "redeemedPoints": 0,
+  "total": 15,
+  "paymentMethod": "cash",
+  "status": "paid",
+  "paymentReference": "PAY-1773768048666-4AE4D0C5",
+  "provider": "manual-direct",
+  "providerPayload": {
+    "provider": "manual-direct"
+  },
+  "paymentConfirmedAt": {
+    "$date": "2026-03-17T17:20:48.674Z"
+  },
+  "finalizedAt": {
+    "$date": "2026-03-17T17:20:48.681Z"
+  },
+  "qrExpiresAt": null,
+  "employee": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "member": null,
+  "createdAt": {
+    "$date": "2026-03-17T17:20:48.668Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-17T17:20:48.682Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b98d77a8792e3043ef4eaa"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f14ce379a85c2305319a3"
+      },
+      "name": "Red Bull",
+      "price": 10,
+      "cost": 7,
+      "qty": 1,
+      "total": 10,
+      "_id": {
+        "$oid": "69b98d77a8792e3043ef4eab"
+      }
+    }
+  ],
+  "subtotal": 10,
+  "discount": 0,
+  "promoDiscount": 0,
+  "redeemedPoints": 0,
+  "total": 10,
+  "paymentMethod": "promptpay",
+  "status": "paid",
+  "paymentReference": "PAY-1773768055231-49EAED15",
+  "provider": "slip-simulation",
+  "providerPayload": {
+    "orderId": "69b98d77a8792e3043ef4eaa"
+  },
+  "paymentConfirmedAt": {
+    "$date": "2026-03-17T17:21:13.066Z"
+  },
+  "finalizedAt": {
+    "$date": "2026-03-17T17:21:13.074Z"
+  },
+  "qrExpiresAt": {
+    "$date": "2026-03-17T17:35:55.231Z"
+  },
+  "employee": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "member": null,
+  "createdAt": {
+    "$date": "2026-03-17T17:20:55.232Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-17T17:21:13.075Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c921dfd1e3e0e61eb783dd"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f13d2379a85c230531997"
+      },
+      "name": "Coca-Cola 325ml",
+      "price": 15,
+      "cost": 11,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69c921dfd1e3e0e61eb783de"
+      }
+    }
+  ],
+  "subtotal": 15,
+  "discount": 0,
+  "promoDiscount": 0,
+  "redeemedPoints": 0,
+  "total": 15,
+  "paymentMethod": "promptpay",
+  "status": "pending",
+  "paymentReference": "PAY-1774789087744-09FBE619",
+  "provider": null,
+  "providerPayload": null,
+  "paymentConfirmedAt": null,
+  "finalizedAt": null,
+  "qrExpiresAt": {
+    "$date": "2026-03-29T13:13:07.744Z"
+  },
+  "employee": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "member": null,
+  "createdAt": {
+    "$date": "2026-03-29T12:58:07.755Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-29T12:58:07.755Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c9243ad1e3e0e61eb7843f"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f1381379a85c230531994"
+      },
+      "name": "Pocky Chocolate",
+      "price": 25,
+      "cost": 18,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69c9243ad1e3e0e61eb78440"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f13d2379a85c230531997"
+      },
+      "name": "Coca-Cola 325ml",
+      "price": 15,
+      "cost": 11,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69c9243ad1e3e0e61eb78441"
+      }
+    }
+  ],
+  "subtotal": 40,
+  "discount": 0,
+  "promoDiscount": 0,
+  "redeemedPoints": 0,
+  "total": 40,
+  "paymentMethod": "promptpay",
+  "status": "paid",
+  "paymentReference": "PAY-1774789690135-D0658E02",
+  "provider": "dev-simulated-webhook",
+  "providerPayload": {
+    "paymentReference": "PAY-1774789690135-D0658E02",
+    "status": "paid",
+    "provider": "dev-simulated-webhook"
+  },
+  "paymentConfirmedAt": {
+    "$date": "2026-03-29T13:09:54.717Z"
+  },
+  "finalizedAt": {
+    "$date": "2026-03-29T13:09:54.740Z"
+  },
+  "qrExpiresAt": {
+    "$date": "2026-03-29T13:23:10.135Z"
+  },
+  "employee": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "member": null,
+  "createdAt": {
+    "$date": "2026-03-29T13:08:10.137Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-29T13:09:54.742Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69cbae5dbc5712b7f26874bc"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f1534379a85c2305319a9"
+      },
+      "name": "มาม่า หมูสับ",
+      "price": 7,
+      "cost": 5,
+      "qty": 1,
+      "total": 7,
+      "_id": {
+        "$oid": "69cbae5dbc5712b7f26874bd"
+      }
+    }
+  ],
+  "subtotal": 7,
+  "discount": 0,
+  "promoDiscount": 0,
+  "redeemedPoints": 0,
+  "total": 7,
+  "paymentMethod": "promptpay",
+  "status": "pending",
+  "paymentReference": "PAY-1774956125020-63FF2E19",
+  "provider": null,
+  "providerPayload": null,
+  "paymentConfirmedAt": null,
+  "finalizedAt": null,
+  "qrExpiresAt": {
+    "$date": "2026-03-31T11:37:05.020Z"
+  },
+  "employee": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "member": null,
+  "createdAt": {
+    "$date": "2026-03-31T11:22:05.046Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:22:05.046Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69cbaefcbc5712b7f2687502"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f1340379a85c230531991"
+      },
+      "name": "Koala’s March Chocolate",
+      "price": 25,
+      "cost": 18,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69cbaefcbc5712b7f2687503"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1381379a85c230531994"
+      },
+      "name": "Pocky Chocolate",
+      "price": 25,
+      "cost": 18,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69cbaefcbc5712b7f2687504"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f13d2379a85c230531997"
+      },
+      "name": "Coca-Cola 325ml",
+      "price": 15,
+      "cost": 11,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69cbaefcbc5712b7f2687505"
+      }
+    }
+  ],
+  "subtotal": 65,
+  "discount": 0,
+  "promoDiscount": 0,
+  "redeemedPoints": 0,
+  "total": 65,
+  "paymentMethod": "cash",
+  "status": "paid",
+  "paymentReference": "PAY-1774956284837-B5E32514",
+  "provider": "manual-direct",
+  "providerPayload": {
+    "provider": "manual-direct"
+  },
+  "paymentConfirmedAt": {
+    "$date": "2026-03-31T11:24:44.851Z"
+  },
+  "finalizedAt": {
+    "$date": "2026-03-31T11:24:44.872Z"
+  },
+  "qrExpiresAt": null,
+  "employee": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "member": null,
+  "createdAt": {
+    "$date": "2026-03-31T11:24:44.840Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:44.873Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69cbaf01bc5712b7f2687517"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f121b379a85c23053198e"
+      },
+      "name": "Pringles Original",
+      "price": 59,
+      "cost": 45,
+      "qty": 1,
+      "total": 59,
+      "_id": {
+        "$oid": "69cbaf01bc5712b7f2687518"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1340379a85c230531991"
+      },
+      "name": "Koala’s March Chocolate",
+      "price": 25,
+      "cost": 18,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69cbaf01bc5712b7f2687519"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f149a379a85c2305319a0"
+      },
+      "name": "Oishi Green Tea",
+      "price": 15,
+      "cost": 11,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69cbaf01bc5712b7f268751a"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f14ce379a85c2305319a3"
+      },
+      "name": "Red Bull",
+      "price": 10,
+      "cost": 7,
+      "qty": 1,
+      "total": 10,
+      "_id": {
+        "$oid": "69cbaf01bc5712b7f268751b"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1505379a85c2305319a6"
+      },
+      "name": "มาม่า ต้มยำกุ้ง",
+      "price": 7,
+      "cost": 5,
+      "qty": 1,
+      "total": 7,
+      "_id": {
+        "$oid": "69cbaf01bc5712b7f268751c"
+      }
+    }
+  ],
+  "subtotal": 116,
+  "discount": 0,
+  "promoDiscount": 0,
+  "redeemedPoints": 0,
+  "total": 116,
+  "paymentMethod": "cash",
+  "status": "paid",
+  "paymentReference": "PAY-1774956289570-F2BB0762",
+  "provider": "manual-direct",
+  "providerPayload": {
+    "provider": "manual-direct"
+  },
+  "paymentConfirmedAt": {
+    "$date": "2026-03-31T11:24:49.588Z"
+  },
+  "finalizedAt": {
+    "$date": "2026-03-31T11:24:49.607Z"
+  },
+  "qrExpiresAt": null,
+  "employee": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "member": null,
+  "createdAt": {
+    "$date": "2026-03-31T11:24:49.574Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:49.608Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69cbaf05bc5712b7f2687534"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "699f10d9379a85c230531983"
+      },
+      "name": "Stock Keeping Unit",
+      "price": 35,
+      "cost": 20,
+      "qty": 1,
+      "total": 35,
+      "_id": {
+        "$oid": "69cbaf05bc5712b7f2687535"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f11d2379a85c23053198b"
+      },
+      "name": "Lay’s BBQ 50g",
+      "price": 25,
+      "cost": 14,
+      "qty": 1,
+      "total": 25,
+      "_id": {
+        "$oid": "69cbaf05bc5712b7f2687536"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f142e379a85c23053199a"
+      },
+      "name": "Pepsi 325ml",
+      "price": 15,
+      "cost": 11,
+      "qty": 1,
+      "total": 15,
+      "_id": {
+        "$oid": "69cbaf05bc5712b7f2687537"
+      }
+    },
+    {
+      "product": {
+        "$oid": "699f1468379a85c23053199d"
+      },
+      "name": "น้ำดื่ม Singha 600ml",
+      "price": 10,
+      "cost": 3,
+      "qty": 1,
+      "total": 10,
+      "_id": {
+        "$oid": "69cbaf05bc5712b7f2687538"
+      }
+    }
+  ],
+  "subtotal": 85,
+  "discount": 0,
+  "promoDiscount": 0,
+  "redeemedPoints": 0,
+  "total": 85,
+  "paymentMethod": "cash",
+  "status": "paid",
+  "paymentReference": "PAY-1774956293681-E29A270B",
+  "provider": "manual-direct",
+  "providerPayload": {
+    "provider": "manual-direct"
+  },
+  "paymentConfirmedAt": {
+    "$date": "2026-03-31T11:24:53.695Z"
+  },
+  "finalizedAt": {
+    "$date": "2026-03-31T11:24:53.710Z"
+  },
+  "qrExpiresAt": null,
+  "employee": {
+    "$oid": "699f0762aaaa159a0c49f51b"
+  },
+  "member": null,
+  "createdAt": {
+    "$date": "2026-03-31T11:24:53.684Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:53.712Z"
+  },
+  "__v": 0
+}]

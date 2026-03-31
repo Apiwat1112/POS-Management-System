@@ -1,0 +1,342 @@
+[{
+  "_id": {
+    "$oid": "699f10d9379a85c230531983"
+  },
+  "name": "Stock Keeping Unit",
+  "sku": "SNK001",
+  "price": 35,
+  "cost": 20,
+  "stock": 12,
+  "category": "Snack",
+  "image": "1772032217657-LAY classic.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:10:17.665Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:53.696Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f11d2379a85c23053198b"
+  },
+  "name": "Lay’s BBQ 50g",
+  "sku": "SNK002",
+  "price": 25,
+  "cost": 14,
+  "stock": 14,
+  "category": "Snack",
+  "image": "1772032466585-lays_bbq.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:14:26.587Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:53.701Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f121b379a85c23053198e"
+  },
+  "name": "Pringles Original",
+  "sku": "SNK003",
+  "price": 59,
+  "cost": 45,
+  "stock": 42,
+  "category": "Snack",
+  "image": "1772032539200-Pringles Original.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:15:39.202Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:49.589Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f1340379a85c230531991"
+  },
+  "name": "Koala’s March Chocolate",
+  "sku": "SNK004",
+  "price": 25,
+  "cost": 18,
+  "stock": 18,
+  "category": "Snack",
+  "image": "1772032832668-Koalaâs March Chocolate.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:20:32.670Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:49.592Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f1381379a85c230531994"
+  },
+  "name": "Pocky Chocolate",
+  "sku": "SNK005",
+  "price": 25,
+  "cost": 18,
+  "stock": 15,
+  "category": "Snack",
+  "image": "1772032897217-Pocky Chocolate.png",
+  "createdAt": {
+    "$date": "2026-02-25T15:21:37.221Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:44.866Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f13d2379a85c230531997"
+  },
+  "name": "Coca-Cola 325ml",
+  "sku": "DRK001",
+  "price": 15,
+  "cost": 11,
+  "stock": 19,
+  "category": "Drink",
+  "image": "1772032978782-Coca-Cola 325ml.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:22:58.783Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:44.869Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f142e379a85c23053199a"
+  },
+  "name": "Pepsi 325ml",
+  "sku": "DRK002",
+  "price": 15,
+  "cost": 11,
+  "stock": 24,
+  "category": "Drink",
+  "image": "1772033070029-Pepsi 325ml.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:24:30.030Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:53.704Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f1468379a85c23053199d"
+  },
+  "name": "น้ำดื่ม Singha 600ml",
+  "sku": "DRK003",
+  "price": 10,
+  "cost": 3,
+  "stock": 26,
+  "category": "Drink",
+  "image": "1772033128783-à¸à¹à¸³à¸à¸·à¹à¸¡ Singha 600ml.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:25:28.785Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:53.706Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f149a379a85c2305319a0"
+  },
+  "name": "Oishi Green Tea",
+  "sku": "DRK004",
+  "price": 15,
+  "cost": 11,
+  "stock": 23,
+  "category": "Drink",
+  "image": "1772033178400-Oishi Green Tea.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:26:18.403Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:49.595Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f14ce379a85c2305319a3"
+  },
+  "name": "Red Bull",
+  "sku": "DRK005",
+  "price": 10,
+  "cost": 7,
+  "stock": 19,
+  "category": "Drink",
+  "image": "1772033230262-Red Bull.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:27:10.266Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:49.598Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f1505379a85c2305319a6"
+  },
+  "name": "มาม่า ต้มยำกุ้ง",
+  "sku": "FOD001",
+  "price": 7,
+  "cost": 5,
+  "stock": 20,
+  "category": "Food",
+  "image": "1772033285617-à¸¡à¸²à¸¡à¹à¸² à¸à¹à¸¡à¸¢à¸³à¸à¸¸à¹à¸.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:28:05.619Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-31T11:24:49.602Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f1534379a85c2305319a9"
+  },
+  "name": "มาม่า หมูสับ",
+  "sku": "FOD002",
+  "price": 7,
+  "cost": 5,
+  "stock": 19,
+  "category": "Food",
+  "image": "1772033332527-à¸¡à¸²à¸¡à¹à¸² à¸«à¸¡à¸¹à¸ªà¸±à¸.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:28:52.529Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-17T14:59:50.259Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f156a379a85c2305319ac"
+  },
+  "name": "ไวไว บะหมี่",
+  "sku": "FOD003",
+  "price": 20,
+  "cost": 15,
+  "stock": 28,
+  "category": "Food",
+  "image": "1772033393165-à¹à¸§à¹à¸§ à¸à¸°à¸«à¸¡à¸µà¹.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:29:46.446Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T15:31:23.246Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f15ae379a85c2305319b2"
+  },
+  "name": "ปลากระป๋อง Three Lady Cooks",
+  "sku": "FOD004",
+  "price": 20,
+  "cost": 15,
+  "stock": 26,
+  "category": "Food",
+  "image": "1772033454607-à¸à¸¥à¸²à¸à¸£à¸°à¸à¹à¸­à¸ Three Lady Cooks.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:30:54.610Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T16:45:12.443Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f1623379a85c2305319b5"
+  },
+  "name": "ทิชชู่ Scott",
+  "sku": "HME001",
+  "price": 25,
+  "cost": 18,
+  "stock": 27,
+  "category": "Home",
+  "image": "1772033571286-à¸à¸´à¸à¸à¸¹à¹ Scott.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:32:51.288Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T16:45:12.445Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f167b379a85c2305319b8"
+  },
+  "name": "แชมพู Clear 170ml",
+  "sku": "HME002",
+  "price": 89,
+  "cost": 70,
+  "stock": 27,
+  "category": "Home",
+  "image": "1772033659551-à¹à¸à¸¡à¸à¸¹ Clear 170ml.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:34:19.553Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T16:45:12.447Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f16cd379a85c2305319bb"
+  },
+  "name": "สบู่ Lux",
+  "sku": "HME003",
+  "price": 29,
+  "cost": 22,
+  "stock": 25,
+  "category": "Home",
+  "image": "1772033741600-à¸ªà¸à¸¹à¹ Lux.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:35:41.603Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T16:45:12.449Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f1706379a85c2305319be"
+  },
+  "name": "แปรงสีฟัน Colgate",
+  "sku": "HME004",
+  "price": 35,
+  "cost": 25,
+  "stock": 25,
+  "category": "Home",
+  "image": "1772033798207-à¹à¸à¸£à¸à¸ªà¸µà¸à¸±à¸ Colgate.jpg",
+  "createdAt": {
+    "$date": "2026-02-25T15:36:38.210Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-17T14:59:50.262Z"
+  },
+  "__v": 0
+}]
